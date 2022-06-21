@@ -13,6 +13,13 @@ import (
 	"gopkg.in/alecthomas/kingpin.v2"
 )
 
+var (
+	version string
+	commit  string
+	date    string
+	builtBy string
+)
+
 type release struct {
 	TagName string `json:"tag_name"`
 }

@@ -70,7 +70,7 @@ func main() {
 	}
 
 	body = []byte(strings.ReplaceAll(string(body), "0.0.0.0", "127.127.127.127")) // 0.0.0.0 is valid; I prefer loopback
-	err = ioutil.WriteFile(*output, body, os.ModePerm)                            // write body to file (overwriting)
+	err = ioutil.WriteFile(*output, body, 0o644)                                  // write body to file (overwriting)
 	if err != nil {
 		log.Fatalln(err)
 	}
